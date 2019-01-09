@@ -42,7 +42,7 @@ int main() {
         int position;
         cout << "Enter a character: ";
         cin >> letter;
-        position = letter - 96;
+        position = 26 - ('z' - letter);
         cout << "\n" << letter << " is letter " << position << "\n";
     }
 
