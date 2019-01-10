@@ -51,7 +51,7 @@ int main() {
     cout << "\nEnter amount received: ";
     cin >> receivedAmount;
 
-    change = (receivedAmount - purchaseAmount) * 100;
+    change = (receivedAmount - purchaseAmount) * 100 + 0.5;
     cout << "\nTotal Change: $" << (change / 100.0) << "\n";
 
     dollars = change / 100;
