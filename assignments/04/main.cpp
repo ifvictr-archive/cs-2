@@ -13,18 +13,16 @@
 using namespace std;
 
 /*
- * Mathematics Specification
+ * Game of Pig Simulation
  * 
  * This program...
  * 
  * INPUT:
- *   operation: The operation user wants to perform
- *   num1     : Input 1 for calculation
- *   num2     : Input 2 for calculation
- *   num3     : Input 3 for calculation
+ *   holdValue: Minimum score to start holding at
+ *   maxSims  : Amount of simulations to run before stopping
  *
  * OUTPUT:
- *   Outputs the equation of the operation and the result from the calculation.
+ *   Outputs a table of results obtained from simulations
  */
 int main() {
     // cout <<
@@ -38,22 +36,22 @@ int main() {
     // srand(time(0));
     srand(333);
 
-    int holdValue;
-    float maxSims;
-    int poss1;
-    int poss2;
-    int poss3;
-    int poss4;
-    int poss5;
-    int poss6;
-    int poss7;
-    int gotPoss1 = 0;
-    int gotPoss2 = 0;
-    int gotPoss3 = 0;
-    int gotPoss4 = 0;
-    int gotPoss5 = 0;
-    int gotPoss6 = 0;
-    int gotPoss7 = 0;
+    int holdValue;    // INPUT: Minimum score to start holding at
+    float maxSims;    // INPUT: Amount of simulations to run before stopping
+    int poss1;        // INPUT: Value of possibility 1
+    int poss2;        // INPUT: Value of possibility 2
+    int poss3;        // INPUT: Value of possibility 3
+    int poss4;        // INPUT: Value of possibility 4
+    int poss5;        // INPUT: Value of possibility 5
+    int poss6;        // INPUT: Value of possibility 6
+    int poss7;        // INPUT: Value of possibility 7
+    int gotPoss1 = 0; // INPUT: Amount of times we got possibility 1
+    int gotPoss2 = 0; // INPUT: Amount of times we got possibility 2
+    int gotPoss3 = 0; // INPUT: Amount of times we got possibility 3
+    int gotPoss4 = 0; // INPUT: Amount of times we got possibility 4
+    int gotPoss5 = 0; // INPUT: Amount of times we got possibility 5
+    int gotPoss6 = 0; // INPUT: Amount of times we got possibility 6
+    int gotPoss7 = 0; // INPUT: Amount of times we got possibility 7
 
     cout << "What value should we hold at? ";
     cin >> holdValue;
@@ -102,6 +100,7 @@ int main() {
         }
     }
 
+    // OUTPUT: Table of possibilities
     cout << left << setw(8) << "\nScore\tEstimated Probability" << endl;
     cout << setprecision(6) << fixed;
     cout << left << poss1 << "\t" << (gotPoss1 / maxSims) << endl;
