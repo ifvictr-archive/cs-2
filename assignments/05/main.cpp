@@ -33,7 +33,6 @@ int main() {
     //     "  Assignment: Cipher\n"
     //     "*****************************************\n";
 
-
     const string ALPHABET = "abcdefghijklmnopqrstuvwxyz";
     const string DEFAULT_MAP = "zyxwvutsrqponmlkjihgfedcba";
     string method;
@@ -47,11 +46,11 @@ int main() {
     cout << "What is the method (encryption or decryption)? ";
     cin >> method;
     if (!(method == "encryption" || method == "decryption")) {
-        cout << "Error: invalid method choice.\n";
+        cout << "\nError: invalid method choice.\n";
         return 1;
     }
 
-    cout << "What is the translation map (type 'default' to use default): ";
+    cout << "\nWhat is the translation map (type 'default' to use default): ";
     cin >> translationMapChoice;
     if (translationMapChoice == "default") {
         translationMap = DEFAULT_MAP;
@@ -60,11 +59,11 @@ int main() {
         translationMap = translationMapChoice;
     }
     else {
-        cout << "Error: invalid translation map size.\n";
+        cout << "\nError: invalid translation map size.\n";
         return 1;
     }
 
-    cout << "What is the single word to translate: ";
+    cout << "\nWhat is the single word to translate: ";
     cin >> str;
 
     // OUTPUT: Process string appropriately action based on method
@@ -85,10 +84,10 @@ int main() {
             processedStr += encryptedChar;
         }
         if (!hasFailed) {
-            cout << "Encrypted word: " << processedStr << "\n";
+            cout << "\nEncrypted word: " << processedStr << "\n";
         }
         else {
-            cout << "Error: encryption cannot be performed.\n";
+            cout << "\nError: encryption cannot be performed.\n";
         }
     }
     else if (method == "decryption") {
@@ -103,10 +102,10 @@ int main() {
             processedStr += decryptedChar;
         }
         if (!hasFailed) {
-            cout << "Decrypted word: " << processedStr << "\n";
+            cout << "\nDecrypted word: " << processedStr << "\n";
         }
         else {
-            cout << "Error: decryption cannot be performed.\n";
+            cout << "\nError: decryption cannot be performed.\n";
         }
     }
 
