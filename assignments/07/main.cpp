@@ -33,10 +33,17 @@ void pictureRoom();
  * possible.
  * 
  * IN:
- *   phrase:
+ *   isRunning  : Whether the game should continue running or not
+ *   alignment  : Current turn's alignment selection
+ *   bananaCount: The amount of bananas the player has
+ *   orangeCount: The amount of oranges the player has
+ *   playerName : The name of the player
+ *   monsterName: The name of the monster
+ *   choice     : The player's direction choice
  *
  * OUT:
- *   wrongGuessesLeft:
+ *   Performs appropriate actions based on chosen direction and outputs the
+ *   result of each direction choice.
  */
 int main()
 {
