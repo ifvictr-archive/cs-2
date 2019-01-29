@@ -57,9 +57,13 @@ int main()
 
     // PROC: Run all components of the program
     runPart1();
+    cout << endl;
     runPart2();
+    cout << endl;
     runPart3();
+    cout << endl;
     runPart4();
+    cout << endl;
 
     return 0;
 }
@@ -146,7 +150,7 @@ void runPart4()
     cout << endl;
 
     // OUT: Print resulting limit values from input mean and variance
-    rand_mv(mean, variance);
+    cout << rand_mv(mean, variance);
 }
 
 /*
