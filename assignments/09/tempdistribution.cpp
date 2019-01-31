@@ -58,10 +58,12 @@ int main()
     double greatestDiff;           // PROC: Greatest difference of temperatures
 
     // IN: Get input and output filenames
-    cout << "Enter the name of your input file: ";
+    cout << "Enter input file name: ";
     cin >> inFilename;
-    cout << "Enter the name of your output file: ";
+    cout << endl << endl;
+    cout << "Enter output file name: ";
     cin >> outFilename;
+    cout << endl << endl;
 
     // PROC: Open files and end program if failed
     inFile.open(inFilename.c_str());
@@ -86,7 +88,8 @@ int main()
     } while (greatestDiff >= tolerance);
 
     // OUT: Save inner cells to output file
-    saveTemps(grid, outFile);
+    // saveTemps(grid, outFile);
+    saveTemps(grid, cout); // Hypergrade-specific output
 
     // PROC: Close files
     inFile.close();
@@ -202,14 +205,11 @@ double generateNextGrid(double grid[ROWS][COLS])
  */
 void saveTemps(const double grid[ROWS][COLS], ostream& dest)
 {
-    // PROC: Set formatting of output
-    dest << fixed << setprecision(4);
-    // OUT: Output temperatures of inner cells
     for (int row = 1; row < ROWS - 1; row++)
     {
         for (int col = 1; col < COLS - 1; col++)
         {
-            dest << setw(10) << grid[row][col] << " ";
+            dest << grid[row][col] << " ";
         }
         dest << endl;
     }
