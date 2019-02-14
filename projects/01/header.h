@@ -36,11 +36,14 @@ struct PlayerBoard
 
 void displayBoards(const char board1[BOARD_SIZE][BOARD_SIZE], const char board2[BOARD_SIZE][BOARD_SIZE]);
 void getValidShipInfo(int &x, int &y, char &orientation, const PlayerBoard &board, int shipIndex);
+void getAIShot(PlayerBoard &board);
 void getValidShot(PlayerBoard &board);
 bool hasOccupiedPoint(const Ship &ship, int x, int y);
 bool hasSunkenFleet(const PlayerBoard &board);
-bool isInBoard(int startX, int startY, char orientation, int shipSize);
+bool isPointInBoard(int x, int y);
+bool isWithinBoard(int startX, int startY, char orientation, int shipSize);
 void initBoard(PlayerBoard &board1, PlayerBoard &board2);
+void initBoardWithAI(PlayerBoard &board1, PlayerBoard &board2);
 void initFleet(PlayerBoard &board);
 void setShip(PlayerBoard &board, int shipIndex);
 bool spaceOccupied(const PlayerBoard &board, int startX, int startY, char orientation, int shipSize);
